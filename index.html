@@ -11,17 +11,33 @@
 
     <div class="cursor"></div>
 
-    <header class="header">
-        <nav class="nav container">
-            <div class="nav-side">
-                <a href="#collections" class="nav-link">Коллекция</a>
-            </div>
-            <a href="#" class="logo">MAISON ELITE</a>
-            <div class="nav-side">
-                <a href="#contact" class="nav-link">Контакты</a>
-            </div>
-        </nav>
-    </header>
+<header class="header">
+    <nav class="nav container">
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="nav-side nav-left-side">
+            <a href="#heritage" class="nav-link">Наследие</a>
+            <a href="#collections" class="nav-link">Коллекция</a>
+        </div>
+        
+        <a href="#" class="logo">MAISON ELITE</a>
+        
+        <div class="nav-side nav-right-side">
+            <a href="#brands" class="nav-link">Бренды</a>
+            <a href="#contact-info" class="nav-link">Контакты</a>
+        </div>
+
+        <div class="mobile-menu" id="nav-menu">
+            <a href="#heritage" class="nav-link">Наследие</a>
+            <a href="#collections" class="nav-link">Коллекция</a>
+            <a href="#brands" class="nav-link">Бренды</a>
+            <a href="#contact-info" class="nav-link">Контакты</a>
+        </div>
+    </nav>
+</header>
 
     <section class="hero">
         <div class="hero-bg"></div>
@@ -45,7 +61,7 @@
             </div>
         </div>
     </section>
-    <section class="heritage fade-in">
+    <section class="heritage fade-in" id="heritage">
         <div class="container">
             <div class="heritage-content">
                 <span class="label">Наследие</span>
@@ -187,7 +203,7 @@
         </div>
     </section>
 
-    <section class="brands container fade-in">
+    <section class="brands container fade-in" id="brands">
         <div class="section-title">
             <span class="label">Наши партнеры</span>
             <h2>Международное партнерство</h2>
@@ -245,16 +261,51 @@
             </div>
         </div>
     </section>
-    <footer id="contact" class="footer">
-        <div class="container">
-            <h3>Обратиться к нам</h3>
-            <p>Оставьте заявку для получения доступа к оптовым каталогам.</p>
-            <form class="contact-form">
-                <input type="email" placeholder="Ваш E-mail" required>
-                <button type="submit">Отправить заявку</button>
-            </form>
-            <div class="footer-bottom">
-                <p>&copy; 2026 MAISON ELITE. Все права защищены.</p>
+<footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-column info">
+                <a href="#" class="logo">MAISON ELITE</a>
+                <p>Эксклюзивная дистрибуция европейских модных домов в СНГ. Более 30 лет экспертизы в мире высокой моды.</p>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">Telegram</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+
+            <div class="footer-column links">
+                <h4>Навигация</h4>
+                <ul>
+                    <li><a href="#heritage">Наше наследие</a></li>
+                    <li><a href="#collections">Каталог коллекций</a></li>
+                    <li><a href="#brands">Бренды-партнеры</a></li>
+                    <li><a href="#contact-info">Шоурум в Москве</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column links">
+                <h4>Партнерам</h4>
+                <ul>
+                    <li><a href="#contact">Оптовый доступ</a></li>
+                    <li><a href="#">Условия логистики</a></li>
+                    <li><a href="#">Стать партнером</a></li>
+                    <li><a href="#">Политика конфиденциальности</a></li>
+                </ul>
+            </div>
+
+            <div id="contact" class="footer-column contact-box">
+                <h4>Обратиться к нам</h4>
+                <p>Получите доступ к закрытым каталогам сезона 2026.</p>
+                <form class="contact-form">
+                    <input type="email" placeholder="Ваш E-mail" required>
+                    <button type="submit">Inquiry</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 MAISON ELITE. Все права защищены. Дизайн: Haute Couture Studio</p>
             </div>
         </div>
     </footer>

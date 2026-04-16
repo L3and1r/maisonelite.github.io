@@ -56,11 +56,30 @@ body {
     background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
 }
 
+/* Навигация десктоп */
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+}
+.nav-side {
+    display: flex;
+    align-items: center;
+    flex: 1; /* Распределяет пространство поровну слева и справа */
+}
+
+.nav-right-side {
+    justify-content: flex-end; /* Прижимает правые ссылки к правому краю */
+}
+
+.nav-left-side .nav-link {
+    padding-left: 0;
+    padding-right: 35px; /* Отступ справа для левых ссылок */
+}
+
+.nav-right-side .nav-link {
+    padding-left: 35px; /* Отступ слева для правых ссылок */
 }
 
 .logo {
@@ -80,9 +99,76 @@ body {
     letter-spacing: 3px;
     opacity: 0.8;
     transition: 0.3s;
+    padding-left: 35px;
 }
 
 .nav-link:hover { opacity: 1; }
+
+/* Базовые правки навигации */
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 1001;
+}
+
+.burger span {
+    display: block;
+    width: 25px;
+    height: 1px;
+    background-color: #fff;
+    transition: 0.3s;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+/* Адаптив (992px и ниже) */
+@media (max-width: 992px) {
+    .nav-left-side, .nav-right-side {
+        display: none; /* Скрываем раздельные части */
+    }
+
+    .burger {
+        display: flex;
+        order: 1;
+    }
+
+    .logo {
+        order: 2;
+        margin: 0 auto;
+        transform: translateX(-20px); /* Компенсация ширины бургера для центровки */
+    }
+
+    .mobile-menu {
+        display: flex;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: var(--black);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 1000;
+    }
+
+    .mobile-menu.active {
+        right: 0;
+    }
+
+    .mobile-menu .nav-link {
+        font-size: 1.5rem;
+        padding: 0;
+        opacity: 1;
+        font-family: var(--serif);
+    }
+}
 
 /* Hero */
 .hero {
@@ -313,10 +399,93 @@ body {
 
 /* Footer */
 .footer {
-    padding: 120px 40px 60px;
-    background: var(--black);
-    color: var(--white);
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 80px 0 30px;
+    border-top: 1px solid #333;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.footer-column h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    color: #888;
+}
+
+.footer-column .logo {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.footer-column p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #bbb;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+    color: #eee;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: var(--gold, #c5a059); /* Если у вас есть переменная для золотого цвета */
+}
+
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: #888;
+    font-size: 0.8rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 30px;
     text-align: center;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Адаптив для футера */
+@media (max-width: 992px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
 }
 
 .footer h3 { font-family: var(--serif); font-size: 2.5rem; font-weight: 300; margin-bottom: 15px; }
