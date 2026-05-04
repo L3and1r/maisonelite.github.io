@@ -68,3 +68,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('modal-overlay');
+    const openBtn = document.getElementById('open-modal');
+    const closeBtn = document.getElementById('modal-close');
+
+    // Открыть модальное окно
+    if (openBtn) {
+        openBtn.addEventListener('click', () => {
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Блокировка скролла
+        });
+    }
+
+    // Закрыть по кнопке
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    });
+
+    // Закрыть при клике на темную область
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    });
+});

@@ -261,6 +261,17 @@
             </div>
         </div>
     </section>
+    <section class="cta-section fade-in">
+    <div class="cta-bg" style="background-image: url('img/cta_bg.png');"></div>
+    <div class="container cta-content">
+        <span class="label" style="color: var(--white);">Присоединиться к элите</span>
+        <h2>Готовы расширить границы вашего бизнеса?</h2>
+        <p>Станьте официальным партнером Maison Elite и получите доступ к эксклюзивным коллекциям текущего сезона</p>
+        <button id="open-modal" class="btn-outline main-cta">
+            Стать партнером
+        </button>
+    </div>
+</section>
 <footer class="footer">
         <div class="container footer-content">
             <div class="footer-column info">
@@ -292,15 +303,6 @@
                     <li><a href="#">Политика конфиденциальности</a></li>
                 </ul>
             </div>
-
-            <div id="contact" class="footer-column contact-box">
-                <h4>Обратиться к нам</h4>
-                <p>Получите доступ к закрытым каталогам сезона 2026.</p>
-                <form class="contact-form">
-                    <input type="email" placeholder="Ваш E-mail" required>
-                    <button type="submit">Оставить заявку</button>
-                </form>
-            </div>
         </div>
 
         <div class="footer-bottom">
@@ -310,6 +312,28 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-content">
+        <button class="modal-close" id="modal-close">&times;</button>
+        <span class="label">Форма регистрации</span>
+        <h2 style="font-family: var(--serif); margin-bottom: 30px;">Стать партнером</h2>
+        
+        <form class="modal-form">
+            <input type="text" placeholder="Фамилия" required>
+            <input type="text" placeholder="Имя" required>
+            <input type="text" placeholder="Отчество" required>
+            <input type="email" placeholder="Электронная почта" required>
+            <input type="text" placeholder="ОГРН или номер ИП" required>
+            
+            <div class="checkbox-wrapper">
+                <input type="checkbox" id="fz152" required>
+                <label for="fz152">Согласен на обработку персональных данных (152-ФЗ)</label>
+            </div>
+            
+            <button type="submit" class="btn-outline" style="background: var(--black); width: 100%;">Отправить данные</button>
+        </form>
+    </div>
+</div>
 </body>
+    <script src="js/script.js"></script>
 </html>
