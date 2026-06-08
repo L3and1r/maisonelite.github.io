@@ -934,3 +934,7 @@ body {
     color: var(--black);
     border-color: var(--white);
 }
+.contact-links-new:hover {
+    text-decoration:underline;
+    color: #DBB289;
+}
