@@ -934,7 +934,7 @@ body {
     color: var(--black);
     border-color: var(--white);
 }
-.contact-links-new {
+.contact-links-new a {
     color: black;
     text-decoration: none;
 }
