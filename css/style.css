@@ -935,7 +935,7 @@ body {
     border-color: var(--white);
 }
 a.contact-links-new {
-    color: black;
+    transition: color black 0.2s ease-in-out;
     text-decoration: none;
 }
 .contact-links-new:hover {
