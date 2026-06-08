@@ -935,12 +935,12 @@ body {
     border-color: var(--white);
 }
 a.contact-links-new {
-    color: #DBB289; 
+    color: black;
     text-decoration: none;
-    transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out; 
 }
 
 .contact-links-new:hover {
-    color: black;
+    color: #DBB289; /* При наведении становится золотистым */
     text-decoration: underline;
 }
