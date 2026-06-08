@@ -935,10 +935,10 @@ body {
     border-color: var(--white);
 }
 a.contact-links-new {
-    transition: color black 0.2s ease-in-out;
+    color: black;
     text-decoration: none;
 }
 .contact-links-new:hover {
     text-decoration:underline;
-    color: #DBB289;
+    transition: #DBB289 black 0.2s ease-in-out;
 }
