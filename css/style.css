@@ -472,10 +472,34 @@ body {
 }
 
 .social-links a {
+    display: inline-flex;   /* Включаем flex для выравнивания содержимого ссылки */
+    align-items: center;    /* Выравниваем иконку и текст строго по центру по вертикали */
+    gap: 6px;               /* Задаем небольшой отступ между иконкой и текстом */
     color: #888;
     font-size: 0.8rem;
     text-decoration: none;
     text-transform: uppercase;
+    transition: color 0.2s ease; /* Плавный переход цвета при наведении */
+}
+
+/* Стили для SVG-иконок внутри ссылок */
+.social-links a img {
+    width: 20px;
+    height: 20px;
+    /* Делает иконку белой, даже если исходный файл был темным */
+    filter: brightness(0) invert(1); 
+    /* Эффект полупрозрачности, чтобы иконка подходила под цвет текста #888 */
+    opacity: 0.5; 
+    transition: opacity 0.2s ease;
+}
+
+/* Эффект при наведении (опционально, для красоты) */
+.social-links a:hover {
+    color: #fff; /* Текст становится белым при наведении */
+}
+
+.social-links a:hover img {
+    opacity: 1;  /* Иконка становится ярче при наведении */
 }
 
 .footer-bottom {
@@ -485,7 +509,6 @@ body {
     font-size: 0.8rem;
     color: #666;
 }
-
 /* Адаптив для футера */
 @media (max-width: 992px) {
     .footer-content {
